@@ -25,5 +25,8 @@ public class Departamento {
 		this.id = id;
 	}
 	
+	@ManyToOne (mappedBy = "departamento", cascade = CascadeType.ALL )
+	Pessoa p = new Pessoa();
+	
 
 }

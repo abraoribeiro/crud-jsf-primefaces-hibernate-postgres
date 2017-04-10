@@ -1,5 +1,7 @@
 package com.beans;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.*;
 
 @Entity
@@ -39,6 +41,16 @@ public class Pessoa {
 	}
 	public void setDepartamento(int departamento) {
 		this.departamento = departamento;
+	}
+	
+	@OneToMany (mappedBy = "pessoa", cascade = CascadeType.ALL )
+	List<Departamento> departamentos = new ArrayList<Departamento>();
+
+	public List<Departamento> getDepartamentos() {
+		return departamentos;
+	}
+	public void setDepartamentos(List<Departamento> departamentos) {
+		this.departamentos = departamentos;
 	}
 	
 }
