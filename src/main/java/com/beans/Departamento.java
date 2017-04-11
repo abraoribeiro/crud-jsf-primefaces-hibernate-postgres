@@ -25,8 +25,17 @@ public class Departamento {
 		this.id = id;
 	}
 	
-	@ManyToOne (mappedBy = "departamento", cascade = CascadeType.ALL )
+	@ManyToOne
+	@JoinColumn (name="pes_id")
 	Pessoa p = new Pessoa();
+
+	public Pessoa getP() {
+		return p;
+	}
+	public void setP(Pessoa p) {
+		this.p = p;
+	}
+	
 	
 
 }
